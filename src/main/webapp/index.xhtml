@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
         <h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
@@ -15,6 +16,36 @@
         #{productito.nombre}<br/>
         #{productito.precio}<br/>
         #{productito.img}<br/>
+        <br/>
+        <h1>Manejo de objetos</h1>
+        ID: #{gestor.mascota.id}<br/>
+        Nombre: #{gestor.mascota.nombre}<br/>
+        Precio: #{gestor.mascota.precio}<br/>
+        Cantidad: #{gestor.mascota.cantidad}<br/>
+        <h:graphicImage library="imagenes" name="#{gestor.mascota.img}"></h:graphicImage>
+        
+        <h:dataTable var="masc" value = "#{gestor.mascotas}" border="1">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                #{masc.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nombre</f:facet>
+                #{masc.nombre}
+            </h:column><!-- comment -->
+            <h:column>
+                <f:facet name="header">Precio</f:facet>
+                #{masc.precio}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Cantidad</f:facet>
+                #{masc.cantidad}
+            </h:column>
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                <h:graphicImage library="imagenes" name="#{masc.img}"></h:graphicImage>
+            </h:column>
+        </h:dataTable>
     </h:body>
 </html>
 
