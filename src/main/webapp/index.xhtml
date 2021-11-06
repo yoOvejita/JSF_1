@@ -45,7 +45,46 @@
                 <f:facet name="header">ID</f:facet>
                 <h:graphicImage library="imagenes" name="#{masc.img}"></h:graphicImage>
             </h:column>
+            <h:column>
+                <f:facet name="header">Menu</f:facet>
+                <h:commandLink value="Ver mas" action="#{gestor.guardarMascota(masc)}"></h:commandLink>
+            </h:column>
         </h:dataTable>
+        
+        <h:form>
+            Dale click <h:commandLink value="aqui" action="#{saludo.sumar('2', '4')}"></h:commandLink>
+        </h:form>
+        <br/><br/>
+        <h:form>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td><h:inputText value="#{gestor.mascota.id}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h:inputText value="#{gestor.mascota.nombre}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h:inputText value="#{gestor.mascota.precio}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h:inputText value="#{gestor.mascota.cantidad}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h:inputText value="#{gestor.mascota.img}"></h:inputText></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h:commandButton value="REGISTRAR" action="#{gestor.registrar()}"></h:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
     </h:body>
 </html>
 

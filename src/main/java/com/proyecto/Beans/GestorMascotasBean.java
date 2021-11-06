@@ -48,4 +48,13 @@ public class GestorMascotasBean implements Serializable {
         this.mascotas = mascotas;
     }
     
+    public String guardarMascota(Mascota masc){
+        mascota = masc;
+        System.out.println("Mascota lista!");
+        return "resultado2";
+    }
+    
+    public String registrar(){
+        return "resultado2";
+    }
 }

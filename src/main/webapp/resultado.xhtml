@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        Resultado: #{saludo.resultado}<br/>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>#{gestor.mascota.id}</td>
+            </tr>
+            <tr>
+                <td>Nombre</td>
+                <td>#{gestor.mascota.nombre}</td>
+            </tr><!-- comment -->
+            <tr>
+                <td>Precio</td>
+                <td>#{gestor.mascota.precio}</td>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td>#{gestor.mascota.cantidad}</td>
+            </tr>
+            <tr>
+                <td>Imagen</td>
+                <td><h:graphicImage library="imagenes" name="#{gestor.mascota.img}"></h:graphicImage></td>
+            </tr>
+        </table>
+    </h:body>
+</html>

@@ -7,6 +7,7 @@ package com.proyecto.Beans;
 import jakarta.inject.Named;
 import jakarta.enterprise.context.Dependent;
 import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
 import jakarta.faces.bean.ViewScoped;
 
 /**
@@ -15,9 +16,9 @@ import jakarta.faces.bean.ViewScoped;
  */
 //@Named(value = "saludo")
 @ManagedBean(name="saludo", eager = true)
-@ViewScoped
+@SessionScoped
 public class saludoBean {
-
+    int resultado = 0;
     /**
      * Creates a new instance of saludoBean
      */
@@ -27,4 +28,20 @@ public class saludoBean {
     public String obtenerSaludo(){
         return "Hola a todos y todas";
     }
+    public String sumar(String n1, String n2){
+        int num1 = Integer.parseInt(n1);
+        int num2 = Integer.parseInt(n2);
+        int res = num1 + num2;
+        resultado = res;
+        return "resultado";
+    }
+
+    public int getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(int resultado) {
+        this.resultado = resultado;
+    }
+    
 }
