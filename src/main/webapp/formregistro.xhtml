@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table>
+                <tr>
+                    <td>Usuario</td>
+                    <td>
+                        <h:inputText value="#{frijol.desarrollador.usuario}"></h:inputText>
+                        <!-- <p:inputTextArea value="#{frijol.desarrollador.usuario}"></p:inputTextArea> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <h:inputSecret value="#{frijol.desarrollador.password}"></h:inputSecret>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Genero</td>
+                    <td>
+                        <h:selectOneRadio value="#{frijol.desarrollador.genero}">
+                            <f:selectItem itemLabel="Femenino" itemValue="F"></f:selectItem>
+                            <f:selectItem itemLabel="Masculino" itemValue="M"></f:selectItem>
+                        </h:selectOneRadio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Disponibilidad</td>
+                    <td>
+                        <h:selectBooleanCheckbox value="#{frijol.desarrollador.disponible}"></h:selectBooleanCheckbox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lenguajes de programación que domina</td>
+                    <td>
+                        <h:selectManyCheckbox value="#{frijol.desarrollador.lenguajesProgramacion}" layout="pageDirection">
+                            <f:selectItem itemLabel="Java" itemValue="l1"></f:selectItem>
+                            <f:selectItem itemLabel="C#" itemValue="l2"></f:selectItem>
+                            <f:selectItem itemLabel="Python" itemValue="l3"></f:selectItem>
+                            <f:selectItem itemLabel="JavaScript" itemValue="l4"></f:selectItem>
+                            <f:selectItem itemLabel="C++" itemValue="l5"></f:selectItem>
+                        </h:selectManyCheckbox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cargo</td>
+                    <td>
+                        <h:selectOneMenu value="#{frijol.desarrollador.rol}">
+                            <f:selectItem itemLabel="Administrador" itemValue="r1"></f:selectItem>
+                            <f:selectItem itemLabel="DBA" itemValue="r2"></f:selectItem>
+                            <f:selectItem itemLabel="Support" itemValue="r3"></f:selectItem>
+                        </h:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fecha de nacimiento</td>
+                    <td>
+                        <p:calendar pattern="dd/MM/yyyy" value="#{frijol.desarrollador.fechaNacimiento}"></p:calendar>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Detalles</td>
+                    <td>
+                        <p:editor width="500" value="#{frijol.desarrollador.detalles}"/>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Firma</td>
+                    <td>
+                        <p:signature style="width:400px; height:200px" widgetVar="sig" value="#{frijol.desarrollador.firma}" required="true" guideline="true"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h:commandButton value="REGISTRAR" action="#{frijol.registrar()}"></h:commandButton></td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>

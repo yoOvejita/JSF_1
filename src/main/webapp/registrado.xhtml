@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body>
+        <table border="1">
+    <tr>
+        <td>#{frijol.desarrollador.usuario}</td>
+        ...
+        <td>
+            <ui:repeat var="len" value="#{frijol.desarrollador.lenguajesProgramacion}">
+                #{len}<br/>
+        </td>
+        ...
+        <td>
+             <h:outputText value="#{frijol.desarrollador.fechaNacimiento}">
+                 <f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime> 
+             </h:outputText>
+        </td>
+        <td>
+             <h:outputText value="#{frijol.desarrollador.detalles}"></h:outputText>
+        </td>
+        <td>
+             <p:outputPanel id="output">
+                 <p:signature style="width:400px;height:200px;" value="#{frijol.desarrollador.firma}" readonly="true" rendered="#{not empty frijol.desarrollador.firma}"/>
+             </p:outputPanel>
+        </td>
+    </tr>
+</table>
+    </h:body>
+</html>
